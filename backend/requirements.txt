@@ -1,0 +1,51 @@
+# ---------------------------------------------------------------------
+# FinSight AI — Backend Dependencies
+# ---------------------------------------------------------------------
+# Web framework & server
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# Configuration
+pydantic>=2.12.5,<3.0.0
+pydantic-settings==2.7.1
+
+# Database
+sqlalchemy==2.0.36
+
+# Auth (wired up in a later phase; pinned now so the environment is
+# complete and reproducible from this phase onward)
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.20
+
+# Data processing (used starting the Financial Analytics Engine phase)
+pandas==2.2.3
+numpy==2.2.1
+
+# Machine learning — Logistic Regression (baseline) + Random Forest
+# (nonlinear comparison), trained and evaluated offline; see
+# app/ml/train_model.py. No deep learning.
+scikit-learn==1.6.0
+joblib==1.4.2
+
+# Excel/CSV file parsing support for Pandas
+openpyxl==3.1.5
+
+# RAG stack (used starting the Document Ingestion / RAG phase)
+# - PyMuPDF: PDF text extraction
+# - sentence-transformers: local embedding model
+# - faiss-cpu: local, in-process vector similarity search (no vector-DB server)
+pymupdf==1.25.1
+sentence-transformers==3.3.1
+faiss-cpu==1.9.0.post1
+
+# LLM client (Google Gen AI SDK — the current, GA, unified SDK for the
+# Gemini API; NOT the deprecated google-generativeai package)
+google-genai==2.18.1
+
+# Testing
+pytest==8.3.4
+httpx==0.28.1
+
+# Environment file loading (used by pydantic-settings' env_file support)
+python-dotenv==1.0.1

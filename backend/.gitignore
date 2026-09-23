@@ -1,0 +1,43 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+
+# Database
+*.db
+*.db-journal
+test_finsight.db
+
+# ML artifacts — risk_model.joblib and risk_model.summary.json ARE
+# committed intentionally (a ready-to-use trained model), so this only
+# ignores stray retraining output in other formats.
+app/ml/*.pkl
+
+# RAG storage — uploaded documents and generated vector indexes are
+# user-uploaded/derived data, not source code
+storage/documents/*
+!storage/documents/.gitkeep
+storage/faiss_indexes/*
+!storage/faiss_indexes/.gitkeep
+test_storage/
+
+# sentence-transformers model cache (downloaded at runtime)
+.cache/
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

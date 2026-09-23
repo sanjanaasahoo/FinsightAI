@@ -1,0 +1,184 @@
+{
+  "model_type": "logistic_regression",
+  "model_label": "Logistic Regression",
+  "feature_names": [
+    "net_margin",
+    "operating_margin",
+    "gross_margin",
+    "current_ratio",
+    "quick_ratio",
+    "debt_to_equity",
+    "interest_coverage",
+    "operating_cash_flow_margin",
+    "revenue_growth"
+  ],
+  "feature_medians": {
+    "net_margin": 0.055999999999999994,
+    "operating_margin": 0.08604999999999999,
+    "gross_margin": 0.23045,
+    "current_ratio": 1.4135,
+    "quick_ratio": 1.0305,
+    "debt_to_equity": 0.9984999999999999,
+    "interest_coverage": 4.1065000000000005,
+    "operating_cash_flow_margin": 0.07725,
+    "revenue_growth": 0.031950000000000006
+  },
+  "label_classes": [
+    "Low",
+    "Medium",
+    "High"
+  ],
+  "feature_importance": [
+    {
+      "feature": "operating_cash_flow_margin",
+      "importance": 1.8287,
+      "importance_pct": 20.6
+    },
+    {
+      "feature": "net_margin",
+      "importance": 1.4572,
+      "importance_pct": 16.4
+    },
+    {
+      "feature": "quick_ratio",
+      "importance": 1.3734,
+      "importance_pct": 15.5
+    },
+    {
+      "feature": "interest_coverage",
+      "importance": 1.2435,
+      "importance_pct": 14.0
+    },
+    {
+      "feature": "operating_margin",
+      "importance": 0.8513,
+      "importance_pct": 9.6
+    },
+    {
+      "feature": "debt_to_equity",
+      "importance": 0.8069,
+      "importance_pct": 9.1
+    },
+    {
+      "feature": "current_ratio",
+      "importance": 0.7898,
+      "importance_pct": 8.9
+    },
+    {
+      "feature": "gross_margin",
+      "importance": 0.4429,
+      "importance_pct": 5.0
+    },
+    {
+      "feature": "revenue_growth",
+      "importance": 0.0655,
+      "importance_pct": 0.7
+    }
+  ],
+  "evaluation_results": {
+    "logistic_regression": {
+      "accuracy": 0.9417,
+      "macro_precision": 0.9417,
+      "macro_recall": 0.9548,
+      "macro_f1": 0.948,
+      "per_class": {
+        "Low": {
+          "precision": 0.9444,
+          "recall": 1.0,
+          "f1": 0.9714,
+          "support": 17
+        },
+        "Medium": {
+          "precision": 0.9474,
+          "recall": 0.931,
+          "f1": 0.9391,
+          "support": 58
+        },
+        "High": {
+          "precision": 0.9333,
+          "recall": 0.9333,
+          "f1": 0.9333,
+          "support": 45
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Low",
+          "Medium",
+          "High"
+        ],
+        "matrix": [
+          [
+            17,
+            0,
+            0
+          ],
+          [
+            1,
+            54,
+            3
+          ],
+          [
+            0,
+            3,
+            42
+          ]
+        ]
+      }
+    },
+    "random_forest": {
+      "accuracy": 0.8833,
+      "macro_precision": 0.9222,
+      "macro_recall": 0.8037,
+      "macro_f1": 0.8376,
+      "per_class": {
+        "Low": {
+          "precision": 1.0,
+          "recall": 0.5294,
+          "f1": 0.6923,
+          "support": 17
+        },
+        "Medium": {
+          "precision": 0.8333,
+          "recall": 0.9483,
+          "f1": 0.8871,
+          "support": 58
+        },
+        "High": {
+          "precision": 0.9333,
+          "recall": 0.9333,
+          "f1": 0.9333,
+          "support": 45
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Low",
+          "Medium",
+          "High"
+        ],
+        "matrix": [
+          [
+            9,
+            8,
+            0
+          ],
+          [
+            0,
+            55,
+            3
+          ],
+          [
+            0,
+            3,
+            42
+          ]
+        ]
+      }
+    }
+  },
+  "selection_metric": "macro_f1",
+  "training_data_path": "C:\\FinsightAI\\finsight-ai\\data\\ml_risk_training.csv",
+  "training_data_disclaimer": "risk_label in the training data is a SYNTHETIC, rule-based proof-of-concept label (see data/generate_dataset.py and data/DATA_DICTIONARY.md) \u2014 not derived from real credit events, real defaults, or real analyst judgments. Treat this model's output as a demonstration of the ML pipeline, not a validated real-world risk score.",
+  "trained_at": "2026-09-22T03:49:47.964903+00:00"
+}
